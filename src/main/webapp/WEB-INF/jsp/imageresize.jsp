@@ -1,6 +1,3 @@
-<%@ taglib prefix="spring" uri="/spring" %>
-<%@ page contentType="text/html" pageEncoding="UTF-8" %>
-
 <html>
 <head><title>Image Resize - Datagrinder</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">

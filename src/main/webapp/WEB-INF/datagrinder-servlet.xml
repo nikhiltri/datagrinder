@@ -3,13 +3,4 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<!--
-  <bean name="/imageresize.htm" id="ImageResizeController"
-        class="edu.artic.fedora.web.ImageResizeController">
-    <property name="commandClass" value="edu.artic.fedora.bus.ImageBean"/>
-    <property name="formView" value="imageresize.jsp"/>
-    <property name="successView" value="imageresize.jsp"/> 
-  </bean>
--->
-
 </beans>
