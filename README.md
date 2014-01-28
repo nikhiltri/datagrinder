@@ -1,5 +1,8 @@
 Datagrinder
 ===========
+Datagrinder is a set of services for deriving different versions of
+media files. You can create smaller-sized images, convert images to
+text, etc.
 
 ## Prerequisites
 
@@ -9,19 +12,16 @@ Datagrinder
 
 ## Installation
 
-1) In `pom.xml`, modify the property `jmagick.path.jar` to point to
-   your system's JMagick JAR file.
-
-2) Add the following options to your Tomcat config, usually to
-   `TOMCAT_HOME/comf/setenv.local`:
+1) Add the following options to your Tomcat config, usually to
+   `TOMCAT_HOME/bin/setenv.sh`, or `/etc/sysconfig/tomcat7`:
 
     # Add options for JMagick to load properly
     JAVA_OPTS="$JAVA_OPTS -Djmagick.systemclassloader=no"
 
-3) From the command-line, type:
+2) From the command-line, run:
 
-    mvn package
+    mvn install
 
-4) Copy `target/datagrinder.war` to your Tomcat webapps directory. For
+3) Copy `target/datagrinder.war` to your Tomcat webapps directory. For
    quicker deployment in the future, modify `deploy.sh` to use a
    utility script.
