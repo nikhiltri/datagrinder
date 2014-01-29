@@ -1,7 +1,8 @@
 #!/bin/sh
 
-sudo cp target/datagrinder.war /opt/local/share/java/tomcat6/webapps/
-echo "[deploy.sh] Copied datagrinder.war to Tomcat webapps directory.\n"
+#sudo cp target/datagrinder.war /opt/local/share/java/tomcat6/webapps/
+sudo cp target/datagrinder.war /Users/ntrive/local/apache-tomcat-7.0.50/webapps/
+echo "[deploy.sh] Copied datagrinder.war to Tomcat webapps directory."
 
-scp -r * collections-sandbox:/home/ntrive/datagrinder/
-echo "[deploy.sh] Pushed code to collections-sandbox.\n"
+scp target/datagrinder.war collections-sandbox:/home/ntrive/
+echo "[deploy.sh] Pushed war to collections-sandbox ntrive's home directory."

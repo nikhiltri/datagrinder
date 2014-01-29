@@ -38,7 +38,6 @@
 
   <properties>
     <spring.version>4.0.0.RELEASE</spring.version>
-    <jmagick.path.jar>/opt/local/share/java/tomcat6/lib/jmagick-6.6.9.jar</jmagick.path.jar>
   </properties>
 
 
@@ -126,9 +125,8 @@
     <dependency>
       <groupId>jmagick</groupId>
       <artifactId>jmagick</artifactId>
-      <version>6.4.0</version>
-      <scope>system</scope>
-      <systemPath>${jmagick.path.jar}</systemPath>
+      <version>6.6.9</version>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
 </project>
