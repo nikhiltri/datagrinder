@@ -15,9 +15,13 @@ and http://comments.gmane.org/gmane.comp.java.jmagick/559 provided
 helpful tips on getting JMagick installed on OSX.
 
 * Get JMagick source (I cloned the git repo: https://github.com/techblue/jmagick)
-* Run `./configure JFLAGS="-target 1.6 -source 1.6"
-  --with-java-home=/System/Library/Frameworks/JavaVM.framework/Versions/Current
-  --with-magick-home=/opt/local/lib/ImageMagick-6.8.8`
+* Configure
+  * For Fedora 3, running on Tomcat6, run `./configure JFLAGS="-target 1.6 -source 1.6"
+    --with-java-home=/System/Library/Frameworks/JavaVM.framework/Versions/Current
+    --with-magick-home=/opt/local/lib/ImageMagick-6.8.8`
+  * For Fedora 4, running on Tomcat7, run `./configure
+    --with-java-home=/System/Library/Frameworks/JavaVM.framework/Versions/Current
+    --with-magick-home=/opt/local/lib/ImageMagick-6.8.8`
 * Run `make all`. Older versions of JMagick code gave me the following error:
 
       make[1]: Entering directory `/Users/ntrive/Documents/DAMS/jmagick/6.4.0/src'
