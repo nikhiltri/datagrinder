@@ -22,7 +22,7 @@ text, etc.
    your Tomcat config as well:
 
    # Add options for Fedora authentication
-   JAVA_OPTS="$JAVA_OPTS -Dfcrepo.url=http://localhost:8080 -Dfcrepo.username=datagrinder -Dfcrepo.password=********* "
+   JAVA_OPTS="$JAVA_OPTS -Dfcrepo.host=localhost -Dfcrepo.port=8080 -Dfcrepo.username=datagrinder -Dfcrepo.password=********* "
 
 3) From the command-line, run:
 

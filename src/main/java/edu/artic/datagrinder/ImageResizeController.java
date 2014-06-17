@@ -49,17 +49,21 @@ public class ImageResizeController {
 
   private DefaultHttpClient httpClient;
 
-  @Value("${fcrepo.url}")
-  private String fcrepoUrl;
+  private String fcrepoHost;
 
-  @Value("${fcrepo.username}")
+  private int fcrepoPort;
+
   private String fcrepoUsername;
 
-  @Value("${fcrepo.password}")
   private String fcrepoPassword;
 
   @PostConstruct
   public void init() {
+    fcrepoHost = System.getProperty("fcrepo.host", "localhost");
+    fcrepoPort = Integer.parseInt(System.getProperty("fcrepo.host", "8080"));
+    fcrepoUsername = System.getProperty("fcrepo.username", "");
+    fcrepoPassword = System.getProperty("fcrepo.password", "");
+
     final PoolingClientConnectionManager connMann = new PoolingClientConnectionManager();
     connMann.setMaxTotal(MAX_VALUE);
     connMann.setDefaultMaxPerRoute(MAX_VALUE);
@@ -72,9 +76,8 @@ public class ImageResizeController {
     if (!isBlank(fcrepoUsername) && !isBlank(fcrepoPassword)) {
       logger.debug("Adding BASIC credentials to client for repo requests.");
 
-      URI fedoraUri = URI.create(fcrepoUrl);
       CredentialsProvider credsProvider = new BasicCredentialsProvider();
-      credsProvider.setCredentials(new AuthScope(fedoraUri.getHost(), fedoraUri.getPort()),
+      credsProvider.setCredentials(new AuthScope(fcrepoHost, fcrepoPort),
                                    new UsernamePasswordCredentials(fcrepoUsername, fcrepoPassword));
 
       httpClient.setCredentialsProvider(credsProvider);
