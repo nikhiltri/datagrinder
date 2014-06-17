@@ -40,6 +40,8 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import static java.lang.Integer.MAX_VALUE;
 import static org.apache.commons.lang.StringUtils.isBlank;
+import static org.apache.commons.lang3.math.NumberUtils.isNumber;
+import static java.lang.Integer.parseInt;
 import static org.apache.http.HttpStatus.SC_OK;
 
 @Controller
@@ -60,7 +62,12 @@ public class ImageResizeController {
   @PostConstruct
   public void init() {
     fcrepoHost = System.getProperty("fcrepo.host", "localhost");
-    fcrepoPort = Integer.parseInt(System.getProperty("fcrepo.host", "8080"));
+    if (isNumber(System.getProperty("fcrepo.port"))) {
+      fcrepoPort = parseInt(System.getProperty("fcrepo.port"));
+    }
+    else {
+      fcrepoPort = 8080;
+    }
     fcrepoUsername = System.getProperty("fcrepo.username", "");
     fcrepoPassword = System.getProperty("fcrepo.password", "");
 
