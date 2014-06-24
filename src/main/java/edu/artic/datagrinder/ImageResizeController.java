@@ -51,26 +51,20 @@ public class ImageResizeController {
 
   private DefaultHttpClient httpClient;
 
+  @Value("${fcrepo.host:localhost}")
   private String fcrepoHost;
 
+  @Value("${fcrepo.port:8080}")
   private int fcrepoPort;
 
+  @Value("${fcrepo.username}")
   private String fcrepoUsername;
 
+  @Value("${fcrepo.password}")
   private String fcrepoPassword;
 
   @PostConstruct
   public void init() {
-    fcrepoHost = System.getProperty("fcrepo.host", "localhost");
-    if (isNumber(System.getProperty("fcrepo.port"))) {
-      fcrepoPort = parseInt(System.getProperty("fcrepo.port"));
-    }
-    else {
-      fcrepoPort = 8080;
-    }
-    fcrepoUsername = System.getProperty("fcrepo.username", "");
-    fcrepoPassword = System.getProperty("fcrepo.password", "");
-
     final PoolingClientConnectionManager connMann = new PoolingClientConnectionManager();
     connMann.setMaxTotal(MAX_VALUE);
     connMann.setDefaultMaxPerRoute(MAX_VALUE);

@@ -1,0 +1,6 @@
+datagrinder.env=dev
+
+fcrepo.host = localhost
+fcrepo.port = 8080
+fcrepo.username = ****
+fcrepo.password = ****

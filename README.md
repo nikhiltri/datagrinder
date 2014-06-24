@@ -18,11 +18,10 @@ text, etc.
     # Add options for JMagick to load properly
     JAVA_OPTS="$JAVA_OPTS -Djmagick.systemclassloader=no"
 
-2) If your Fedora repo requires authentication, add the following to
-   your Tomcat config as well:
-
-   # Add options for Fedora authentication
-   JAVA_OPTS="$JAVA_OPTS -Dfcrepo.host=localhost -Dfcrepo.port=8080 -Dfcrepo.username=datagrinder -Dfcrepo.password=********* "
+2) Copy
+   [src/main/webapp/WEB-INF/classes/{datagrinder.properties.example](datagrinder.properties.example)
+   to [src/main/webapp/WEB-INF/classes/{datagrinder.properties](datagrinder.properties),
+   particularly if your Fedora repo requires authentication.
 
 3) From the command-line, run:
 
