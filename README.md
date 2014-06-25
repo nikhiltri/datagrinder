@@ -19,9 +19,9 @@ text, etc.
     JAVA_OPTS="$JAVA_OPTS -Djmagick.systemclassloader=no"
 
 2) Copy
-   [src/main/webapp/WEB-INF/classes/{datagrinder.properties.example](datagrinder.properties.example)
-   to [src/main/webapp/WEB-INF/classes/{datagrinder.properties](datagrinder.properties),
-   particularly if your Fedora repo requires authentication.
+   [`datagrinder.properties.example`](src/main/webapp/WEB-INF/classes/datagrinder.properties.example)
+   to `datagrinder.properties`, particularly if your Fedora repo
+   requires authentication.
 
 3) From the command-line, run:
 
